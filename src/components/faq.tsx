@@ -10,11 +10,10 @@ export default function Faq() {
 		<div className="flex flex-col items-center justify-center gap-6 py-10">
 			<div className="flex flex-col items-center justify-center gap-2 max-w-md">
 				<h2 className="sm:text-3xl text-2xl font-semibold text-foreground">
-					Frequently Asked Questions
+					How it Works
 				</h2>
 				<p className="sm:text-base text-sm text-muted-foreground text-center">
-					Everything you need to know about the template. Find answers to common
-					questions.
+					Find out how we grow real networks that can help you succeed.
 				</p>
 			</div>
 			<div className="w-full max-w-lg">
@@ -25,35 +24,26 @@ export default function Faq() {
 				>
 					<AccordionItem value="item-1">
 						<AccordionTrigger className="hover:no-underline">
-							What's included in this template?
+							What exactly is Idea Factory?
 						</AccordionTrigger>
 						<AccordionContent className="text-muted-foreground">
-							This template is a comprehensive Next.js 15 starter kit designed
-							to help you build your next project quickly and efficiently. It
-							includes a range of features and components that you can use to
-							get started, including a responsive design, a dark mode toggle,
-							and a form component.
+							Think of Idea Factory as your backstage pass to a community of brilliant minds. We're bringing together entrepreneurs, creators, and innovators who are tired of surface-level networking. Instead of endless LinkedIn connections that go nowhere, we create real conversations through Google Meet where ideas actually take flight. Join our waitlist to be part of something that actually moves the needle.
 						</AccordionContent>
 					</AccordionItem>
 					<AccordionItem value="item-2">
 						<AccordionTrigger className="hover:no-underline">
-							How do I get started with this template?
+							How do the connections actually work?
 						</AccordionTrigger>
 						<AccordionContent className="text-muted-foreground">
-							To get started with this template, you can clone the repository
-							and install the dependencies using npm or yarn. Once you have the
-							dependencies installed, you can start the development server using
-							npm run dev or yarn dev.
+							Here's the magic: we don't just throw you into a room with random people. We match you with folks who actually get what you're building and can help you get there faster. Maybe you need a technical co-founder, or someone to bounce ideas off, or just want to learn from someone who's been in your shoes. Our Google Meet sessions are where the real magic happens – no awkward small talk, just meaningful conversations that lead somewhere.
 						</AccordionContent>
 					</AccordionItem>
 					<AccordionItem value="item-3">
 						<AccordionTrigger className="hover:no-underline">
-							How do I customize the template to my needs?
+							Why should I choose this over other networking options?
 						</AccordionTrigger>
 						<AccordionContent className="text-muted-foreground">
-							You can customize the template to your needs by modifying the
-							components and pages in the src directory. You can also add your
-							own components and pages to the src directory.
+							Let's be honest – most networking feels like a waste of time. You show up to events, exchange business cards, and never hear from anyone again. Idea Factory is different because we're building a community where people actually show up and contribute. We keep the group curated so every conversation matters, and our Google Meet setup means you can connect from anywhere without the hassle of travel. It's networking that actually works.
 						</AccordionContent>
 					</AccordionItem>
 				</Accordion>

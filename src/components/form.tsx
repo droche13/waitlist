@@ -44,38 +44,75 @@ export default function WaitlistForm({ onSuccessChange }: FormProps) {
     try {
       setLoading(true);
 
+      // ========================================
+      // TEMPORARY CHANGE: Email notifications disabled - only adding to database
+      // ========================================
+      // 
+      // TO REVERT TO ORIGINAL SETUP (re-enable email notifications):
+      // 1. DELETE the "ENABLED: Direct database insertion" section below (lines with fetch("/api/notion"))
+      // 2. UNCOMMENT the "DISABLED: Email notification API call" section above
+      // 3. The original flow will be restored: email API → Notion API
+      // ========================================
+      
       const promise = new Promise((resolve, reject) => {
         const { name, email } = formData;
 
-        fetch("/api/mail", {
-          cache: "no-store",
+        // DISABLED: Email notification API call (uncomment this entire block to restore)
+        // fetch("/api/mail", {
+        //   cache: "no-store",
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({ firstname: name, email }),
+        // })
+        //   .then((mailResponse) => {
+        //     if (!mailResponse.ok) {
+        //       if (mailResponse.status === 429) {
+        //         reject("Rate limited");
+        //       } else {
+        //         reject("Email sending failed");
+        //       }
+        //       return null;
+        //     }
+
+        //     return fetch("/api/notion", {
+        //       method: "POST",
+        //       headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        //       body: JSON.stringify({ name, email }),
+        //     });
+        //   })
+        //   .then((notionResponse) => {
+        //     if (!notionResponse) return;
+
+        //     if (!notionResponse.ok) {
+        //       if (notionResponse.status === 429) {
+        //         reject("Rate limited");
+        //       } else {
+        //         reject("Notion insertion failed");
+        //       }
+        //     } else {
+        //       resolve({ name });
+        //     }
+        //   })
+        //   .catch((error) => {
+        //     reject(error);
+        //   });
+
+        // ========================================
+        // DELETE THIS ENTIRE SECTION WHEN REVERTING TO ORIGINAL SETUP
+        // ========================================
+        // ENABLED: Direct database insertion only (no email notification)
+        fetch("/api/notion", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ firstname: name, email }),
+          body: JSON.stringify({ name, email }),
         })
-          .then((mailResponse) => {
-            if (!mailResponse.ok) {
-              if (mailResponse.status === 429) {
-                reject("Rate limited");
-              } else {
-                reject("Email sending failed");
-              }
-              return null;
-            }
-
-            return fetch("/api/notion", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ name, email }),
-            });
-          })
           .then((notionResponse) => {
-            if (!notionResponse) return;
-
             if (!notionResponse.ok) {
               if (notionResponse.status === 429) {
                 reject("Rate limited");
@@ -89,6 +126,9 @@ export default function WaitlistForm({ onSuccessChange }: FormProps) {
           .catch((error) => {
             reject(error);
           });
+        // ========================================
+        // END OF SECTION TO DELETE WHEN REVERTING
+        // ========================================
       });
 
       toast.promise(promise, {

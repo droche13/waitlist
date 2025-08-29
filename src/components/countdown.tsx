@@ -19,7 +19,7 @@ interface TimeLeft {
 export default function Countdown({
 	period,
 	className = "",
-	label = "LEFT UNTIL FULL RELEASE",
+	label = "LEFT UNTIL YOU UNLOCK YOUR POTENTIAL",
 }: CountdownProps) {
 	const [timeLeft, setTimeLeft] = useState<TimeLeft>({
 		days: 0,

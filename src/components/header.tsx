@@ -17,7 +17,7 @@ export default function Header() {
 					"bg-background/50 md:bg-transparent md:backdrop-blur-none backdrop-blur-sm",
 			)}
 		>
-			<Link
+			{/* <Link
 				href="https://valiant-cobweb-66d.notion.site/1f6821a3f402802ca641e5e19d28a9b2?v=1f6821a3f402810d8a47000cad3beb2d&pvs=74"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -27,10 +27,10 @@ export default function Header() {
 					<NotionLogo />
 					Notion DB Sample
 				</Button>
-			</Link>
+			</Link> */}
 
 			<div className="flex items-center gap-2">
-				<Link
+				{/* <Link
 					href="https://github.com/new?template_name=Waitly&template_owner=Idee8"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export default function Header() {
 						<GithubLogo />
 						Use this template
 					</Button>
-				</Link>
+				</Link> */}
 			</div>
 		</header>
 	);
