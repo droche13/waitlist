@@ -5,8 +5,6 @@ import { Ratelimit } from "@upstash/ratelimit";
 
 import WelcomeTemplate from "~/emails";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const redis = new Redis({
 	url: process.env.UPSTASH_REDIS_REST_URL,
 	token: process.env.UPSTASH_REDIS_REST_TOKEN,
@@ -20,6 +18,16 @@ const ratelimit = new Ratelimit({
 });
 
 export async function POST(request: NextRequest) {
+	// Check if required environment variables exist
+	if (!process.env.RESEND_API_KEY) {
+		return NextResponse.json(
+			{ error: "Resend API key not configured" },
+			{ status: 500 }
+		);
+	}
+
+	const resend = new Resend(process.env.RESEND_API_KEY);
+
 	let ip: string;
 	const xForwardedForHeader = request.headers.get("x-forwarded-for");
 
@@ -40,7 +48,7 @@ export async function POST(request: NextRequest) {
 	const { data, error } = await resend.emails.send({
 		from: process.env.RESEND_FROM_EMAIL || "",
 		to: [email],
-		subject: "Welcome to Next.js + Notion CMS Waitlist",
+		subject: "Welcome to the Future of Networking",
 		react: WelcomeTemplate({ userFirstname: name }),
 	});
 
