@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Powered() {
 	return (
-		<div className="flex flex-col items-center justify-center gap-12 py-12">
+		<div className="flex flex-col items-center justify-center gap-12 py-12 px-4 sm:px-0">
 			<div className="flex flex-col items-center justify-center gap-2">
 				<h3 className="text-foreground text-2xl font-semibold">Powered by</h3>
 				<p className="text-muted-foreground text-base text-center">

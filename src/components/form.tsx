@@ -186,7 +186,7 @@ export default function WaitlistForm({ onSuccessChange }: FormProps) {
   };
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative px-4 sm:px-0">
       {success ? (
         <motion.div
           className="p-6 flex justify-center items-center"
@@ -218,7 +218,7 @@ export default function WaitlistForm({ onSuccessChange }: FormProps) {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email"
-                  className="flex-grow bg-background border border-border text-foreground px-4 py-3 rounded-[12]  focus:outline-1 transition-all duration-300 focus:outline-offset-4 focus:outline-[#e5ff00]"
+                  className="flex-grow bg-background border border-border text-foreground px-4 sm:px-4 py-3 rounded-[12] focus:outline-1 transition-all duration-300 focus:outline-offset-4 focus:outline-[#e5ff00]"
                   disabled={loading}
                   required
                 />
@@ -245,7 +245,7 @@ export default function WaitlistForm({ onSuccessChange }: FormProps) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Name"
-                    className="flex-grow bg-background border border-border text-foreground px-4 py-3 rounded-[12]  focus:outline-1 transition-all duration-300 focus:outline-offset-4 focus:outline-[#e5ff00]"
+                    className="flex-grow bg-background border border-border text-foreground px-4 sm:px-4 py-3 rounded-[12] focus:outline-1 transition-all duration-300 focus:outline-offset-4 focus:outline-[#e5ff00]"
                     disabled={loading}
                     required
                   />

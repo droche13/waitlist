@@ -12,7 +12,7 @@ export default function Hero({ waitlistPeople }: { waitlistPeople: number }) {
   const [isSuccess, setIsSuccess] = useState(false);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6">
+    <div className="flex flex-col items-center justify-center gap-6 px-4 sm:px-0">
       <div className="flex flex-col items-center justify-center gap-6 mb-6">
         <Image src="/Factory.png" alt="Idea Factory" width={96} height={96} className="rounded-xl" />
         <div className="flex items-center gap-4 rounded-full border border-border px-4 py-1 relative">
@@ -26,16 +26,23 @@ export default function Hero({ waitlistPeople }: { waitlistPeople: number }) {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center gap-2 max-w-2xl">
-        <h2 className="text-4xl font-bold text-foreground">
-          {isSuccess ? "You're on the waitlist" : "Get early Access"}
+        <h2 className="text-5xl font-extrabold text-foreground tracking-tight font-sans uppercase italic">
+          {isSuccess ? "You're on the waitlist" : "Idea Factory"}
         </h2>
         <p className="text-base text-muted-foreground text-center max-w-md">
           {isSuccess
-            ? "You've successfully secured your spot.We’ll hit you up the moment it’s your turn to dive in"
-            : "Be among the first to experience the future of networking. Join the waitlist now to get matched with other entrepreneurs, innovators, and creators."}
+            ? "You've successfully secured your spot. We'll hit you up the moment it's your turn to dive in"
+            : (
+              <>
+                Be one of the first to experience the future of networking.
+                <br />
+                <br />
+                Join the waitlist now to meet other driven entrepreneurs, innovators, and creators like yourself.
+              </>
+            )}
         </p>
       </div>
-      <div className="flex flex-col items-center justify-center gap-2 w-full max-w-md">
+      <div className="flex flex-col items-center justify-center gap-2 w-full max-w-md px-4 sm:px-0">
         <Form onSuccessChange={setIsSuccess} />
       </div>
       <div className="flex items-center justify-center gap-2">

@@ -63,7 +63,7 @@ export default function People({
 
 	return (
 		<motion.div
-			className={`flex items-center justify-center gap-2 py-2 px-4 ${className}`}
+			className={`flex items-center justify-center gap-2 py-2 px-4 sm:px-0 ${className}`}
 			animate={controls}
 			transition={{ duration: 0.6 }}
 		>
