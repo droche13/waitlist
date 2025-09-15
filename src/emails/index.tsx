@@ -20,7 +20,7 @@ const WaitlistEmail = ({ userFirstname }: { userFirstname: string }) => {
 		<Html>
 			<Tailwind>
 				<Head>
-					<title>Welcome to Waitly</title>
+					<title>Welcome to Idea Factory</title>
 					<Preview>Thanks for joining our waitlist! We'll keep you in the loop.</Preview>
 					<style>
 						{`
@@ -32,7 +32,7 @@ const WaitlistEmail = ({ userFirstname }: { userFirstname: string }) => {
 					<Container className="bg-[#18181B] rounded-[8px] mx-auto p-[32px] max-w-[600px]">
 						<Section className="mt-[16px] text-center">
 							<Text className="text-[28px] font-bold text-white m-0">
-								Welcome to <span className="text-[#DFFF1A]">Waitly</span>
+								Welcome to <span className="text-[#DFFF1A]">Idea Factory</span>
 							</Text>
 
 							<Text className="text-[18px] text-[#A1A1AA] mt-[16px] mb-[16px]">

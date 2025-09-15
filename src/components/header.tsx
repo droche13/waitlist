@@ -2,46 +2,63 @@
 
 import { cn } from "~/lib/utils";
 import { useScroll } from "~/hooks/use-scroll";
-import { GithubLogo, NotionLogo } from "./svgs";
 import { Button } from "./ui/button";
-import Link from "next/link";
 
 export default function Header() {
 	const scrolled = useScroll();
 
-	return (
-		<header
-			className={cn(
-				"py-4 flex flex-row gap-2 justify-between items-center md:px-10 sm:px-6 px-4 sticky top-0 z-50",
-				scrolled &&
-					"bg-background/50 md:bg-transparent md:backdrop-blur-none backdrop-blur-sm",
-			)}
-		>
-			{/* <Link
-				href="https://valiant-cobweb-66d.notion.site/1f6821a3f402802ca641e5e19d28a9b2?v=1f6821a3f402810d8a47000cad3beb2d&pvs=74"
-				target="_blank"
-				rel="noopener noreferrer"
-				className="cursor-pointer"
-			>
-				<Button variant="secondary">
-					<NotionLogo />
-					Notion DB Sample
-				</Button>
-			</Link> */}
+	const scrollToSection = (sectionId: string) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 
-			<div className="flex items-center gap-2">
-				{/* <Link
-					href="https://github.com/new?template_name=Waitly&template_owner=Idee8"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="cursor-pointer"
-				>
-					<Button variant="secondary">
-						<GithubLogo />
-						Use this template
+	return (
+		<div className="sticky top-0 z-50 pb-6">
+			<header
+				className={cn(
+					"py-4 flex flex-row items-center md:px-10 sm:px-6 px-4",
+					"bg-background/20 backdrop-blur-md border-b border-border/20",
+					"transition-all duration-300"
+				)}
+			>
+				{/* Logo/Brand */}
+				<div className="flex items-center flex-1">
+					<button 
+						onClick={() => scrollToSection('hero')}
+						className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+					>
+						Idea Factory
+					</button>
+				</div>
+
+				{/* Navigation Links - Centered */}
+				<nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
+					<button
+						onClick={() => scrollToSection('demo')}
+						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+					>
+						Our Mission
+					</button>
+					<button
+						onClick={() => scrollToSection('faq')}
+						className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+					>
+						How it Works
+					</button>
+				</nav>
+
+				{/* CTA Button */}
+				<div className="flex items-center flex-1 justify-end">
+					<Button
+						onClick={() => scrollToSection('hero')}
+						className="bg-[#e5ff00] hover:bg-[#d4e600] text-black font-medium px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
+					>
+						Join Waitlist
 					</Button>
-				</Link> */}
-			</div>
-		</header>
+				</div>
+			</header>
+		</div>
 	);
 }

@@ -19,10 +19,16 @@ export function LandingPage({ waitlistPeople }: { waitlistPeople: number }) {
         className="fixed inset-0 z-50 pointer-events-none"
         manualstart={true}
       />
-      <Hero waitlistPeople={waitlistPeople} />
-      <Demo videoSrc="/demo.mov" thumbnailSrc="/demo.png" />
+      <div id="hero">
+        <Hero waitlistPeople={waitlistPeople} />
+      </div>
+      <div id="demo">
+        <Demo videoSrc="/demo.mov" thumbnailSrc="/demo.png" />
+      </div>
       <Powered />
-      <Faq />
+      <div id="faq">
+        <Faq />
+      </div>
       <Footer />
     </main>
   );

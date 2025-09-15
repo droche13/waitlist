@@ -18,32 +18,31 @@ export default function Faq() {
 			</div>
 			<div className="w-full max-w-lg">
 				<Accordion
-					type="single"
-					collapsible
+					type="multiple"
 					className="w-full flex flex-col gap-4"
 				>
 					<AccordionItem value="item-1">
 						<AccordionTrigger className="hover:no-underline">
-							What exactly is Idea Factory?
+							The Idea
 						</AccordionTrigger>
 						<AccordionContent className="text-muted-foreground">
-							Think of Idea Factory as your backstage pass to a community of brilliant minds. We're bringing together entrepreneurs, creators, and innovators who are tired of surface-level networking. Instead of endless LinkedIn connections that go nowhere, we create real conversations through Google Meet where ideas actually take flight. Join our waitlist to be part of something that actually moves the needle.
+							Skipping the LinkedIn bullsh*t. We're building a community to easily connect real people, explore real ideas, and gain real momentum.
 						</AccordionContent>
 					</AccordionItem>
 					<AccordionItem value="item-2">
 						<AccordionTrigger className="hover:no-underline">
-							How do the connections actually work?
+							How It Works
 						</AccordionTrigger>
 						<AccordionContent className="text-muted-foreground">
-							Here's the magic: we don't just throw you into a room with random people. We match you with folks who actually get what you're building and can help you get there faster. Maybe you need a technical co-founder, or someone to bounce ideas off, or just want to learn from someone who's been in your shoes. Our Google Meet sessions are where the real magic happens – no awkward small talk, just meaningful conversations that lead somewhere.
+							Join the waitlist, get matched with like-minded builders, easily connect via Google Meet. No complicated onboarding, no monthly fees, no BS. Just real people having real conversations.
 						</AccordionContent>
 					</AccordionItem>
 					<AccordionItem value="item-3">
 						<AccordionTrigger className="hover:no-underline">
-							Why should I choose this over other networking options?
+							What You Get
 						</AccordionTrigger>
 						<AccordionContent className="text-muted-foreground">
-							Let's be honest – most networking feels like a waste of time. You show up to events, exchange business cards, and never hear from anyone again. Idea Factory is different because we're building a community where people actually show up and contribute. We keep the group curated so every conversation matters, and our Google Meet setup means you can connect from anywhere without the hassle of travel. It's networking that actually works.
+							Co-founders, advisors, customers, or just someone to bounce ideas off. Skip the years of cold outreach and awkward networking events. Get straight to the people who can actually help you build something.
 						</AccordionContent>
 					</AccordionItem>
 				</Accordion>
